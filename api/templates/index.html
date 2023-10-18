@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Hell Movie</title>
+</head>
+<body>
+    <div class="cardmovie">
+        {% for filme in res %}
+            <div class="card">
+                <img src="{{ filme.foto }}" alt="">
+                <h2>{{ filme.titulo }}</h2>
+                <p><strong>Data de Lançamento:</strong> {{ filme.data_lancamento }}</p>
+                <p><strong>Popularidade:</strong> {{ filme.popularidade }}</p>
+                <p><strong>Sinopse:</strong> {{ filme.resumo }}</p>
+                <!-- <p><strong>Id:</strong> {{ filme.id }}</p> -->
+                <button><a href="https://themoviedbbot.blogspot.com/?mv1={{ filme.id }}">Assitir</a></button>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
