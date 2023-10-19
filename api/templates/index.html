@@ -38,15 +38,13 @@
     <div class="cardmovie">
         {% for filme in res %}
         <div class="card">
-            <img src="{{ filme.foto }}" alt="">
+            <img src="{{ filme.foto }}">
             <h2>{{ filme.titulo }}</h2>
             <p class="id-movie">Id: {{ filme.id }}</p>
             <p><strong>Data de Lançamento:</strong> {{ filme.data_lancamento }}</p>
             <p><strong>Popularidade:</strong> {{ filme.popularidade }}</p>
             <p class="resume"><strong>Sinopse:</strong> {{ filme.resumo }}</p>
-
-            <button class="fixed-button"><a href="https://themoviedbbot.blogspot.com/?mv1={{ filme.id }}">Watch - {{
-                    filme.titulo }}</a></button>
+            <a href="https://themoviedbbot.blogspot.com/?mv1={{ filme.id }}"><button class="fixed-button">Watch - {{filme.titulo }}</button></a>
 
         </div>
         {% endfor %}
