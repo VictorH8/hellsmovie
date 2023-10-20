@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="shortcut icon" href="../static/pentagrama.png" type="image/x-icon">
     <title>Hell's Movie - Resultados da Pesquisa</title>
 </head>
 <body>
@@ -25,72 +26,24 @@
         </div>
     </nav>
     <div class="result-search">
-
         {% if dados %}
-
-        {% for filme in dados['results'] %}
-        <div class="card">
-
-            {% if filme['backdrop_path'] %}
-            <img src="https://image.tmdb.org/t/p/w500/{{ filme['backdrop_path'] }}" alt="Imagem do Filme">
-
-
-            <h2 style="margin-bottom: 10px;">{{ filme['title'] }}</h2>
-
-            <p><strong>Data de Lançamento:</strong> {{ filme['release_date'] }}</p>
-
-            <p><strong>Popularidade:</strong> {{ filme['popularity'] }}</p>
-
-            <p><strong>Sinopse:</strong> {{ filme['overview'] }}</p>
-
-            <a href="https://themoviedbbot.blogspot.com/?mv1={{ filme.id }}"><button class="fixed-button">Watch - {{ filme['title'] }}</button></a>
-            {% else %}
-            <p>Problema ao carregar servidor!</p>
-            {% endif %}
-
+            {% for filme in dados['results'] %}
+            <div class="card">
+                {% if filme['backdrop_path'] %}
+                    <img src="https://image.tmdb.org/t/p/w500/{{ filme['backdrop_path'] }}" alt="Imagem do Filme">
+                    <h2 style="margin-bottom: 10px;">{{ filme['title'] }}</h2>
+                    <p><strong>Data de Lançamento:</strong> {{ filme['release_date'] }}</p>
+                    <p><strong>Popularidade:</strong> {{ filme['popularity'] }}</p>
+                    <p><strong>Sinopse:</strong> {{ filme['overview'] }}</p>
+                    <a href="{{ filme.movie }}"><button class="fixed-button">Watch - {{ filme['title'] }}</button></a>
+                {% else %}
+                    <p>Problema ao carregar servidor!</p>
+                {% endif %}
         </div>
         {% endfor %} 
         {% else %}
         <p>Nenhum resultado encontrado.</p>
         {% endif %}
-
-
     </div>
-
-
 </body>
-
-</html>
-</nav>
-    <div class="result-search">
-
-        {% if dados %}
-
-        {% for filme in dados['results'] %}
-        <div class="card">
-
-            {% if filme['backdrop_path'] %}
-            <img src="https://image.tmdb.org/t/p/w500/{{ filme['backdrop_path'] }}" alt="Imagem do Filme">
-            <h2 style="margin-bottom: 10px;">{{ filme['title'] }}</h2>
-            <p><strong>Data de Lançamento:</strong> {{ filme['release_date'] }}</p>
-            <p><strong>Popularidade:</strong> {{ filme['popularity'] }}</p>
-            <p><strong>Sinopse:</strong> {{ filme['overview'] }}</p>
-            <a href="https://themoviedbbot.blogspot.com/?mv1={{ filme.id }}"><button class="fixed-button">Watch - {{ filme['title'] }}</button></a>
-            {% else %}
-            <p>Problema ao carregar servidor!</p>
-            {% endif %}
-
-        </div>
-        {% endfor %}
-        {% else %}
-        <p>Nenhum resultado encontrado.</p>
-        {% endif %}
-
-
-    </div>
-
- 
-
-</body>
-
 </html>

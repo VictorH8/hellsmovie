@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/style.css">
     <title>Hell's Movie</title>
 </head>
-
 <body>
     <nav>
         <div class="logo">
@@ -19,33 +17,23 @@
             <li><a href="">Terror</a></li>
             <li><a href="">Comedia</a></li>
         </ul>
-
-
         <div class="search">
             <form method="post" action="/search">
                 <input type="text" id="query" name="query" required placeholder="Pesquisar filmes...">
                 <button class="search-btn" type="submit"><img src="/static/search.png" alt=""></button>
             </form>
         </div>
-
-
     </nav>
-
-
- 
-
-
     <div class="cardmovie">
         {% for filme in res %}
         <div class="card">
             <img src="{{ filme.foto }}">
             <h2>{{ filme.titulo }}</h2>
-            <p class="id-movie">Id: {{ filme.id }}</p>
+            <!-- <p class="id-movie">Id: {{ filme.id }}</p> -->
             <p><strong>Data de Lançamento:</strong> {{ filme.data_lancamento }}</p>
             <p><strong>Popularidade:</strong> {{ filme.popularidade }}</p>
             <p class="resume"><strong>Sinopse:</strong> {{ filme.resumo }}</p>
-            <a href="https://themoviedbbot.blogspot.com/?mv1={{ filme.id }}"><button class="fixed-button">Watch - {{filme.titulo }}</button></a>
-
+            <a href="{{ filme.movie }}"><button class="fixed-button">Watch - {{ filme.titulo }}</button></a>
         </div>
         {% endfor %}
     </div>

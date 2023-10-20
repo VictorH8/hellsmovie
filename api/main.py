@@ -38,7 +38,8 @@ def home():
                 'data_lancamento': data_lancamento,
                 'popularidade': popularidade,
                 'foto': foto,
-                'id': idmovie
+                'id': idmovie,
+                'movie': f'https://themoviedbbot.blogspot.com/?mv1={idmovie}'
             }
 
             filmes.append(filme_info)
@@ -70,6 +71,12 @@ def search():
             return f"Erro na pesquisa. Status code: {response.status_code}"
 
     return render_template('search.html', dados=None)
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
 
 
 if __name__ == "__main__":
