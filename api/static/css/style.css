@@ -61,6 +61,7 @@ body {
     position: relative;
     overflow: hidden;
     height: 620px;
+    border: 1px solid rgb(15, 15, 15);
 }
 
 .card::before{
@@ -103,19 +104,21 @@ body {
     margin-bottom: 12px;
 }
 
-.cardmovie .card img {
-    margin-bottom: 10px;
+.card img {
+    margin-bottom: 20px;
     width: 100%;
 }
 
 nav {
     justify-content: space-around;
     display: flex;
-    padding: 20px;
+    padding: 15px;
     align-items: center;
 }
 
 li {
+    padding: 10px;
+    border-top: 4px solid white;
     list-style: none;
     margin: 0 20px;
     justify-content: space-between;
@@ -138,7 +141,7 @@ nav a {
 }
 
 .logo img{
-    margin-right: 10px;
+    /* margin-right: 200px; */
     width: 80px;
 }
 
@@ -152,16 +155,20 @@ nav ul {
     align-items: center;
     border-radius: 10px;
     padding: 10px;
-    background-color: rgb(10, 10, 10);
+    /* background-color: rgb(10, 10, 10); */
+    margin-left: -35px;
 }
 
 .search input{
+    padding: 20px;
     border: none;
     outline: none;
-    background-color: rgb(10, 10, 10);
-    height: 40px;
+    background-color: rgb(30, 30, 30);
+    height: 35px;
     color: #ddd;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-left: -40px;
 }
 
 .result-search{
@@ -175,9 +182,51 @@ button{
     background-color: transparent;
 }
 
+.search-btn{
+    position: relative;
+    top: 4px;
+    left: -6px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 40px;
+    background-color: rgb(30, 30, 30);
+}
+
 .search-btn img{
+    position: relative;
+    left: -6px;
+    top: -3px;
     cursor: pointer;
-    margin-bottom: -5px;
-    background-color: rgb(10, 10, 10);
-    width: 30px;
+    margin-bottom: -11px;
+}
+
+
+@media screen and (max-width:768px){
+    nav {
+        display: block;
+    }
+
+    .search-btn{
+        position: relative;
+        top: 3px;
+        left: -4px;
+    }
+
+    
+
+    .search-btn img{
+        position: relative;
+        top: -6px;
+        left: -7px;
+        cursor: pointer;
+        margin-bottom: -15px;
+        color: white;
+    }
+    .search input{
+        width: 78%;
+        margin-left: 33px;
+    }
+    /* ul{
+        display: none;
+    } */
 }

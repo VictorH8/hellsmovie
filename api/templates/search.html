@@ -11,17 +11,15 @@
     <nav>
         <div class="logo">
             <a href="/"><img src="/static/pentagrama.png" alt=""></a>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="https://t.me/HellsSources">Telegram</a></li>
+            </ul>
         </div>
-        <ul>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="">Ação</a></li>
-            <li><a href="">Terror</a></li>
-            <li><a href="">Comedia</a></li>
-        </ul>
         <div class="search">
             <form method="post" action="/search">
-                <input type="text" id="query" name="query" required placeholder="Pesquisar filmes...">
-                <button class="search-btn" type="submit"><img src="/static/search.png" alt=""></a>
+                <input type="text" id="query" name="query" required placeholder="Pesquisar Filme...">
+                <button class="search-btn" type="submit"><img width="25" height="35" src="https://img.icons8.com/ios/50/000000/search--v1.png"/></button>
             </form>
         </div>
     </nav>
@@ -33,9 +31,8 @@
                     <img src="https://image.tmdb.org/t/p/w500/{{ filme['backdrop_path'] }}" alt="Imagem do Filme">
                     <h2 style="margin-bottom: 10px;">{{ filme['title'] }}</h2>
                     <p><strong>Data de Lançamento:</strong> {{ filme['release_date'] }}</p>
-                    <p><strong>Popularidade:</strong> {{ filme['popularity'] }}</p>
                     <p><strong>Sinopse:</strong> {{ filme['overview'] }}</p>
-                    <a href="{{ filme.movie }}"><button class="fixed-button">Watch - {{ filme['title'] }}</button></a>
+                    <a href="https://themoviedbbot.blogspot.com/?mv1={{ filme['id'] }}"><button class="fixed-button">Watch - {{ filme['title'] }}</button></a>
                 {% else %}
                     <p>Problema ao carregar servidor!</p>
                 {% endif %}
