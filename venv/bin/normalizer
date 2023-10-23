@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/home/molozi/Área de trabalho/hellmovie/venv/bin/python" "$0" "$@"
-' '''
+#!/home/muzan/hellsmovie/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

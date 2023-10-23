@@ -3,10 +3,8 @@ import requests
 
 from config import *
 
-##################################
-#ROTA /HOME
 def home():
-    url = "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=pt-BR&page=430&sort_by=popularity.desc"
+    url = "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=pt-BR&page=400&sort_by=popularity.desc"
     headers = {"accept": "application/json","Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMmM2YWNkNDM4OTVjZGVlMzkwNWRhODhjZDdjOTNjZiIsInN1YiI6IjY1MGYxYWQ2MjZkYWMxMDEyZDVhOTRjYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.P2xiPnZCI13rJqk-Pe7KWfIgVRbYf80777VvzGoNdik"}
 
     response = requests.get(url, headers=headers)
@@ -37,7 +35,7 @@ def home():
                 'popularidade': popularidade,
                 'foto': foto,
                 'id': idmovie,
-                'movie': f'https://themoviedbbot.blogspot.com/?mv1={idmovie}'
+                'movie': f'https://themoviedbbot.blogspot.com/?mv2={idmovie}'
             }
 
             filmes.append(filme_info)
@@ -46,8 +44,6 @@ def home():
     else:
         return f"Erro status code: {response.status_code}"
     
-##################################
-#ROTA SEARCH
 def search():
     if request.method == 'POST':
         pesquisa_filme = request.form.get('query')
