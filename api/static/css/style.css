@@ -18,6 +18,7 @@ body {
     color: white;
 }
 
+
 .cardmovie {
     display: flex;
     justify-content: center;
@@ -217,7 +218,7 @@ input:-webkit-autofill {
 }
 
 .search2 input{
-    padding: 20px;
+    padding-top: 7px;
     border: none;
     outline: none;
     background-color: transparent;
@@ -233,6 +234,8 @@ input:-webkit-autofill {
 }
 
 .search-btn1{
+    position: relative;
+    left: -13px;
     background-color: transparent;
     border: none;
     display: none;
@@ -243,6 +246,7 @@ input:-webkit-autofill {
 }
 
 .search-btn{
+    padding-top: 6px;
     background-color: transparent;
     width: 25px;
     cursor: pointer;
@@ -251,13 +255,16 @@ input:-webkit-autofill {
 
 }
 
+main{
+    margin-top: -12px;
+}
+
 .search-btn img{
     width: 25px;
 }
 
 
 @media screen and (max-width:640px){
-
     .search {
         display: none;
     }
