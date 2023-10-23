@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="shortcut icon" href="../static/pentagrama.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../static/img/pentagrama.png" type="image/x-icon">
     <title>Hell's Movie - Resultados da Pesquisa</title>
 </head>
-
 <body>
     <header>
         <nav>
@@ -16,16 +14,12 @@
                 <a href="/"><img src="/static/img/pentagrama.png" alt=""></a>
                 <ul>
                     <li><a href="/">Inicio</a></li>
-
                 </ul>
             </div>
-
             <div id="inputContainer" class="search2">
                 <form method="post" action="/search">
                     <input type="text" id="query" name="query" required placeholder="Pesquisar Filme...">
-
-                    <button class="search-btn" type="submit"><img
-                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAsMCwyNTUuOTg5NTksMjU1Ljk4OTU5IgpzdHlsZT0iZmlsbDojMDAwMDAwOyI+CjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxnIHRyYW5zZm9ybT0ic2NhbGUoNS4xMiw1LjEyKSI+PHBhdGggZD0iTTIxLDNjLTkuMzc4OTEsMCAtMTcsNy42MjEwOSAtMTcsMTdjMCw5LjM3ODkxIDcuNjIxMDksMTcgMTcsMTdjMy43MTA5NCwwIDcuMTQwNjMsLTEuMTk1MzEgOS45Mzc1LC0zLjIxODc1bDEzLjE1NjI1LDEzLjEyNWwyLjgxMjUsLTIuODEyNWwtMTMsLTEzLjAzMTI1YzIuNTU0NjksLTIuOTc2NTYgNC4wOTM3NSwtNi44Mzk4NCA0LjA5Mzc1LC0xMS4wNjI1YzAsLTkuMzc4OTEgLTcuNjIxMDksLTE3IC0xNywtMTd6TTIxLDVjOC4yOTY4OCwwIDE1LDYuNzAzMTMgMTUsMTVjMCw4LjI5Njg4IC02LjcwMzEyLDE1IC0xNSwxNWMtOC4yOTY4NywwIC0xNSwtNi43MDMxMiAtMTUsLTE1YzAsLTguMjk2ODcgNi43MDMxMywtMTUgMTUsLTE1eiI+PC9wYXRoPjwvZz48L2c+Cjwvc3ZnPg==" /></button>
+                    <button class="search-btn" type="submit"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAsMCwyNTUuOTg5NTksMjU1Ljk4OTU5IgpzdHlsZT0iZmlsbDojMDAwMDAwOyI+CjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxnIHRyYW5zZm9ybT0ic2NhbGUoNS4xMiw1LjEyKSI+PHBhdGggZD0iTTIxLDNjLTkuMzc4OTEsMCAtMTcsNy42MjEwOSAtMTcsMTdjMCw5LjM3ODkxIDcuNjIxMDksMTcgMTcsMTdjMy43MTA5NCwwIDcuMTQwNjMsLTEuMTk1MzEgOS45Mzc1LC0zLjIxODc1bDEzLjE1NjI1LDEzLjEyNWwyLjgxMjUsLTIuODEyNWwtMTMsLTEzLjAzMTI1YzIuNTU0NjksLTIuOTc2NTYgNC4wOTM3NSwtNi44Mzk4NCA0LjA5Mzc1LC0xMS4wNjI1YzAsLTkuMzc4OTEgLTcuNjIxMDksLTE3IC0xNywtMTd6TTIxLDVjOC4yOTY4OCwwIDE1LDYuNzAzMTMgMTUsMTVjMCw4LjI5Njg4IC02LjcwMzEyLDE1IC0xNSwxNWMtOC4yOTY4NywwIC0xNSwtNi43MDMxMiAtMTUsLTE1YzAsLTguMjk2ODcgNi43MDMxMywtMTUgMTUsLTE1eiI+PC9wYXRoPjwvZz48L2c+Cjwvc3ZnPg==" /></button>
                 </form>
             </div>
         </nav>
@@ -40,18 +34,16 @@
                 <h2 style="margin-bottom: 10px;">{{ filme['title'] }}</h2>
                 <p><strong>Data de Lançamento:</strong> {{ filme['release_date'] }}</p>
                 <p><strong>Sinopse:</strong> {{ filme['overview'] }}</p>
-                <a href="https://themoviedbbot.blogspot.com/?mv1={{ filme['id'] }}"><button class="fixed-button">Watch -
-                        {{ filme['title'] }}</button></a>
+                <a href="https://themoviedbbot.blogspot.com/?mv2={{ filme['id'] }}"><button class="fixed-button">Watch - {{ filme['title'] }}</button></a>
                 {% else %}
-                <p>Problema ao carregar servidor!</p>
+                    <p>Problema ao carregar servidor!</p>
                 {% endif %}
             </div>
             {% endfor %}
             {% else %}
-            <p>Procure por um titulo.</p>
+                <p>Procure por um titulo.</p>
             {% endif %}
         </div>
     </main>
 </body>
-
 </html>
